@@ -1,0 +1,91 @@
+/* Grid Container */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Grid Column */
+.grid-column {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 480px) {
+  /* 2 columns */
+  .grid-column {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 640px) {
+  /* 3 columns */
+  .grid-column {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+@media (min-width: 768px) {
+  /* 4 columns */
+  .grid-column {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 960px) {
+  /* 5 columns */
+  .grid-column {
+    flex-basis: 20%;
+    max-width: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* 6 columns */
+  .grid-column {
+    flex-basis: 16.66%;
+    max-width: 16.66%;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* 7 columns */
+  .grid-column {
+    flex-basis: 14.28%;
+    max-width: 14.28%;
+  }
+}
+
+@media (min-width: 1440px) {
+  /* 8 columns */
+  .grid-column {
+    flex-basis: 12.5%;
+    max-width: 12.5%;
+  }
+}
+
+@media (min-width: 1600px) {
+  /* 9 columns */
+  .grid-column {
+    flex-basis: 11.11%;
+    max-width: 11.11%;
+  }
+}
+
+@media (min-width: 1920px) {
+  /* 10 columns */
+  .grid-column {
+    flex-basis: 10%;
+    max-width: 10%;
+  }
+}
+
+/* Clearfix */
+.grid-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
