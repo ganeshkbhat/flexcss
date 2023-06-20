@@ -1,0 +1,43 @@
+/* Grid Container */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Grid Column */
+.grid-column {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  /* 2 columns */
+  .grid-column {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* 3 columns */
+  .grid-column {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* 4 columns */
+  .grid-column {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+/* Clearfix */
+.grid-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
