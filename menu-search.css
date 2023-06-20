@@ -1,4 +1,30 @@
+/* 
+<body>
+  <div class="menu-toggle">Toggle Menu</div>
+  
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
 
+  <div class="search-container">
+    <input type="text" placeholder="Search">
+    <button type="submit">Go</button>
+  </div>
+  
+  <script>
+    // JavaScript to toggle the menu on mobile devices
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('show-menu');
+    });
+  </script>
+</body>
+*/
 /* Base styles for the menu */
     .menu {
       display: none;
