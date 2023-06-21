@@ -1,0 +1,48 @@
+
+.breadcrumb {
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+
+.breadcrumb ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+  margin-right: 5px;
+}
+
+.breadcrumb li:last-child {
+  margin-right: 0;
+}
+
+.breadcrumb li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb li span {
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .breadcrumb {
+    padding: 5px;
+  }
+  
+  .breadcrumb li {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .breadcrumb li:last-child {
+    margin-bottom: 0;
+  }
+}
