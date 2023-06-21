@@ -1,12 +1,12 @@
-@import "flexcss-normalize.css";
-@import "flexcss-grid.css";
-@import "flexcss-table.css";
-@import "flexcss-card.css";
-@import "flexcss-accordian-card.css";
-@import "flexcss-accordian.css";
-@import "flexcss-navigation.css";
-@import "flexcss-navigation-search.css";
+@import "components/flexcss-normalize.css";
+@import "components/flexcss-grid.css";
+@import "components/flexcss-table.css";
+@import "components/flexcss-card.css";
+@import "components/flexcss-accordian-card.css";
+@import "components/flexcss-accordian.css";
+@import "components/flexcss-navigation.css";
+@import "components/flexcss-navigation-search.css";
 /* 
-@import "flexcss-.css";
-@import "flexcss-.css";
+@import "components/flexcss-.css";
+@import "components/flexcss-.css";
  */
