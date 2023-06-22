@@ -5,5 +5,5 @@ Supports Sass and Less based framework values
 # TODO
 
 - Framework common padding and styling for framework
-- Sass, Less bases
+- Supports Sass, Less bases
 - Build for Sass and Less
