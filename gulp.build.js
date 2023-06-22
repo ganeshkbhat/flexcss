@@ -9,12 +9,16 @@ var del = require('del');
  
 var paths = {
   styles: {
-    src: 'src/styles/**/*.less',
-    dest: 'assets/styles/'
+    src: 'src/styles/**/*.css',
+    dest: 'dist/'
   },
-  scripts: {
-    src: 'src/scripts/**/*.js',
-    dest: 'assets/scripts/'
+  sass: {
+    src: 'src/scripts/**/*.sass',
+    dest: 'dist/'
+  },
+  less: {
+    src: 'src/scripts/**/*.less',
+    dest: 'dist/'
   }
 };
  
@@ -25,13 +29,13 @@ var paths = {
 function clean() {
   // You can use multiple globbing patterns as you would with `gulp.src`,
   // for example if you are using del 2.0 or above, return its promise
-  return del([ 'assets' ]);
+  return del([ 'dist', "version" ]);
 }
  
 /*
  * Define our tasks using plain functions
  */
-function styles() {
+function less() {
   return gulp.src(paths.styles.src)
     .pipe(less())
     .pipe(cleanCSS())
@@ -42,15 +46,31 @@ function styles() {
     }))
     .pipe(gulp.dest(paths.styles.dest));
 }
- 
-function scripts() {
-  return gulp.src(paths.scripts.src, { sourcemaps: true })
-    .pipe(babel())
-    .pipe(uglify())
-    .pipe(concat('main.min.js'))
-    .pipe(gulp.dest(paths.scripts.dest));
+
+function sass() {
+  // return gulp.src(paths.scripts.src, { sourcemaps: true })
+  //   .pipe(babel())
+  //   .pipe(uglify())
+  //   .pipe(concat('main.min.js'))
+  //   .pipe(gulp.dest(paths.scripts.dest));
 }
- 
+
+function css() {
+  // return gulp.src(paths.scripts.src, { sourcemaps: true })
+  //   .pipe(babel())
+  //   .pipe(uglify())
+  //   .pipe(concat('main.min.js'))
+  //   .pipe(gulp.dest(paths.scripts.dest));
+}
+
+function scripts() {
+  // return gulp.src(paths.scripts.src, { sourcemaps: true })
+  //   .pipe(babel())
+  //   .pipe(uglify())
+  //   .pipe(concat('main.min.js'))
+  //   .pipe(gulp.dest(paths.scripts.dest));
+}
+
 function watch() {
   gulp.watch(paths.scripts.src, scripts);
   gulp.watch(paths.styles.src, styles);
@@ -59,14 +79,15 @@ function watch() {
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var build = gulp.series(clean, gulp.parallel(styles, scripts));
+var build = gulp.series(clean, gulp.parallel(sass, less, styles));
  
 /*
  * You can use CommonJS `exports` module notation to declare tasks
  */
 exports.clean = clean;
-exports.styles = styles;
-exports.scripts = scripts;
+exports.css = css;
+exports.sass = sass;
+exports.less = less;
 exports.watch = watch;
 exports.build = build;
 /*
