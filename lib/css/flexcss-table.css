@@ -1,0 +1,79 @@
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    display: table-header-group;
+    font-weight: bold;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+.comma-separated-header {
+display: none;
+}
+@media (max-width: 600px) {
+    .table {
+        display: block;
+        position: relative;
+    }
+
+    .table-row {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .table-cell {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .comma-separated-header {
+display: block;
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+        margin-bottom: 10px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center; /* Added: Center-align the comma-separated headers */
+    }
+
+    .table-row:first-child {
+        margin-top: 40px;
+    }
+
+    .table-row:first-child .table-cell {
+        border-top: 1px solid #ddd;
+    }
+
+    .table-row:first-child .table-cell:before {
+        content: attr(data-labels);
+        position: absolute;
+        top: -20px;
+        left: 0;
+        right: 0;
+        font-weight: bold;
+        text-align: center;
+    }
+}
